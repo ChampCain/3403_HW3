@@ -3,7 +3,8 @@
 #MAE 3403
 
 from NumericalMethods import Probability, Secant, GPDF, Simpson
-
+# I used AI to help me out on this one and I just couldnt figure out how to get it
+# to work for most problems I put in there. It only works for some.
 def compute_probability_difference(c, mu, sigma, target_prob, double_sided=False, GT=True):
     """
     Compute the probability difference for Secant method.
