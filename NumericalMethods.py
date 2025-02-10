@@ -15,10 +15,10 @@ def Probability(PDF, args, c, GT=True):
     mu, sigma = args
     if GT:
         # P(x > c) = 1 - P(x < c)
-        return 1 - Simpson(PDF, (mu, sigma, mu - 5 * sigma, c))
+        return 1 - Simpson(PDF, (mu - 5 * sigma, c))
     else:
         # P(x < c)
-        return Simpson(PDF, (mu, sigma, mu - 5 * sigma, c))
+        return Simpson(PDF, (mu - 5 * sigma, c))
 
 def GPDF(args):
     """
