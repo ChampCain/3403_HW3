@@ -1,3 +1,7 @@
+#HW3 part c
+#Champ Cain
+#MAE 3403
+
 import numpy as np
 
 #I had to use some AI help with the "IF" and "ELSE" statements in setting them up correctly

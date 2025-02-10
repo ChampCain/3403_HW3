@@ -1,3 +1,7 @@
+#HW3 part b
+#Champ Cain
+#MAE 3403
+
 import math
 from NumericalMethods import Simpson  # Import the updated Simpson function
 

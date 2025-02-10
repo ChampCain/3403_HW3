@@ -1,10 +1,13 @@
 #HW3 part a
 #Champ Cain
 #MAE 3403
-
-from NumericalMethods import Probability, Secant, GPDF, Simpson
 # I used AI to help me out on this one and I just couldnt figure out how to get it
 # to work for most problems I put in there. It only works for some.
+
+
+from NumericalMethods import Probability, Secant, GPDF, Simpson
+
+
 def compute_probability_difference(c, mu, sigma, target_prob, double_sided=False, GT=True):
     """
     Compute the probability difference for Secant method.
@@ -13,10 +16,11 @@ def compute_probability_difference(c, mu, sigma, target_prob, double_sided=False
     if double_sided:
         lower_limit = mu - (c - mu)
         upper_limit = mu + (c - mu)
-        prob = Simpson(lambda x: GPDF(x, mu, sigma), (lower_limit, upper_limit))
+        prob = Simpson(lambda x: GPDF((x, mu, sigma)), (lower_limit, upper_limit))
     else:
-        prob = Probability(GPDF, mu, sigma, c, GT=GT)
+        prob = Probability(GPDF, (mu, sigma), c, GT=GT)
     return prob - target_prob
+
 
 def main():
     """
@@ -34,11 +38,11 @@ def main():
         if double_sided:
             lower_limit = mu - (c - mu)
             upper_limit = mu + (c - mu)
-            prob = Simpson(lambda x: GPDF(x, mu, sigma), (lower_limit, upper_limit))
+            prob = Simpson(lambda x: GPDF((x, mu, sigma)), (lower_limit, upper_limit))
             print(f"P({lower_limit:.4f} < x < {upper_limit:.4f} | μ={mu}, σ={sigma}) = {prob:.4f}")
         else:
             GT = input("Do you want P(x > c)? (y/n): ").strip().lower() == 'y'
-            prob = Probability(GPDF, mu, sigma, c, GT=GT)
+            prob = Probability(GPDF, (mu, sigma), c, GT=GT)
             if GT:
                 print(f"P(x > {c:.4f} | μ={mu}, σ={sigma}) = {prob:.4f}")
             else:
@@ -80,6 +84,7 @@ def main():
 
     else:
         print("Invalid choice. Please enter 'c' or 'P'.")
+
 
 if __name__ == "__main__":
     main()
