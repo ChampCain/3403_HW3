@@ -1,8 +1,7 @@
 #HW3 part a
 #Champ Cain
 #MAE 3403
-# I used AI to help me out on this one and I just couldnt figure out how to get it
-# to work for most problems I put in there. It only works for some.
+# I used AI to help me out on this one. There were a few paths I didnt know how to create
 
 
 from NumericalMethods import Probability, Secant, GPDF, Simpson
